@@ -1,6 +1,6 @@
 import axios from 'axios';
 import BasicTextContainer from './BasicTextContainer';
-import React, { useMemo, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import {
   LineChart,
   Line,
@@ -16,7 +16,6 @@ export function Chart({
   selectedPair,
   dataArray,
   setDataArray,
-  ask,
   setAsk,
   isError,
   setIsError,
@@ -73,7 +72,7 @@ export function Chart({
         });
     }, TIME_TO_WAIT);
     return () => clearInterval(id);
-  }, [dataArray]);
+  }, [dataArray, selectedPair, setDataArray, setIsError, url]);
 
   return (
     <div className='mt-4  mb-6 mx-auto'>

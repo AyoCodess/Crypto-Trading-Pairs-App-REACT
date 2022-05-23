@@ -28,8 +28,6 @@ function App() {
     },
   ]);
 
-  console.log(dataArray);
-
   useEffect(() => {
     const fetchingCurrencyPairs = async () => {
       setIsLoading(true);
