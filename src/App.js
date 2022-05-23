@@ -83,7 +83,10 @@ function App() {
               currencyPairButtonListData={currencyPairButtonListData}
               setSelectedPair={setSelectedPair}
             />
-            <SelectedBtnContainer selectedPair={selectedPair} />
+            <SelectedBtnContainer
+              currencyPairButtonListData={currencyPairButtonListData}
+              selectedPair={selectedPair}
+            />
             <AverageTickerValues avgTradingPairPrice={avgTradingPairPrice} />
           </>
         )}
