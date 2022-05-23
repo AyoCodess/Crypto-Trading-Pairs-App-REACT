@@ -76,7 +76,7 @@ function App() {
   }, []);
 
   return (
-    <div className=' flex flex-col h-screen '>
+    <div className=' flex flex-col h-screen max-w-4xl mx-auto'>
       <Header />
       <Layout>
         {isLoading && (
@@ -115,7 +115,7 @@ function App() {
       )}
       {!selectedPair && (
         <h3 className='flex justify-center font-medium'>
-          Select a trading pair ro view chart
+          Select a trading pair to view chart
         </h3>
       )}
       <Footer />
