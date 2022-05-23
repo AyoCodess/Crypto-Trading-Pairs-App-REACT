@@ -51,7 +51,7 @@ export function Chart({
   }, [selectedPair]);
 
   const url = `https://www.bitstamp.net/api/v2/ticker/${selectedPair}`;
-  const TIMETOWAIT = 10500;
+  const TIME_TO_WAIT = 10500;
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -60,7 +60,7 @@ export function Chart({
           setDataArray((prev) => [
             {
               name: selectedPair,
-              price: res.data.ask,
+              price: res.data.ask.toLocaleString(),
             },
             ...prev,
           ]);
@@ -71,7 +71,7 @@ export function Chart({
             'Something when wrong, please refresh the page and try again'
           );
         });
-    }, TIMETOWAIT);
+    }, TIME_TO_WAIT);
     return () => clearInterval(id);
   }, [dataArray]);
 
@@ -80,33 +80,38 @@ export function Chart({
       {selectedPair && (
         <BasicTextContainer
           text={`Current Price of ${selectedPair.toUpperCase()} Every 10secs`}
-          custom={'font-medium mb-2'}
+          custom={'font-medium mb-2 text-lg mx-auto text-center'}
         />
       )}
 
       {!isError && (
-        <LineChart
-          width={370}
-          height={300}
-          data={dataArray}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 0,
-            bottom: 5,
-          }}>
-          <CartesianGrid strokeDasharray='3 3' />
-          <XAxis dataKey='name' />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line
-            type='monotone'
-            dataKey='price'
-            stroke='#6EA2F8'
-            activeDot={{ r: 8 }}
-          />
-        </LineChart>
+        <div className='flex mx-auto'>
+          {/* // - chart is responsive only when in a flex div */}
+          <ResponsiveContainer aspect={1.5} width={'99%'} height={'99%'}>
+            <LineChart
+              width={470}
+              height={400}
+              data={dataArray}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 0,
+                bottom: 5,
+              }}>
+              <CartesianGrid strokeDasharray='3 3' />
+              <XAxis dataKey='name' />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Line
+                type='monotone'
+                dataKey='price'
+                stroke='#6EA2F8'
+                activeDot={{ r: 8 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       )}
       {!isError && (
         <>
