@@ -102,13 +102,22 @@ function App() {
           </>
         )}
       </Layout>
-      <Chart
-        selectedPair={selectedPair}
-        dataArray={dataArray}
-        setDataArray={setDataArray}
-        ask={ask}
-        setAsk={setAsk}
-      />
+      {selectedPair && (
+        <Chart
+          selectedPair={selectedPair}
+          dataArray={dataArray}
+          setDataArray={setDataArray}
+          ask={ask}
+          setAsk={setAsk}
+          isError={isError}
+          setIsError={setIsError}
+        />
+      )}
+      {!selectedPair && (
+        <h3 className='flex justify-center font-medium'>
+          Select a trading pair ro view chart
+        </h3>
+      )}
       <Footer />
     </div>
   );
