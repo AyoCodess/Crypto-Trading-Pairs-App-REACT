@@ -82,7 +82,9 @@ function App() {
         )}
         {isError && (
           <FetchStateContainer
-            text={'Something went wrong, please try again'}
+            text={
+              'Something went wrong, please try again. Alternatively, this is more than likely a CORS issue. Please download the Moesif CORS extension to circumvent this issue. Thank you.'
+            }
           />
         )}
         {!isLoading && !isError && (
