@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
 
 function TradingPairBtnContainer({
   currencyPairButtonListData,
   setSelectedPair,
+  setDataArray,
 }) {
   return (
     <div className='flex flex-col justify-center p-2 border border-blue-200 rounded-md shadow max-h-96  overflow-y-auto'>
@@ -17,9 +19,13 @@ function TradingPairBtnContainer({
             return (
               <button
                 key={pair.name}
-                onClick={() =>
-                  setSelectedPair(pair.name.split('/').join('').toLowerCase())
-                }
+                onClick={() => {
+                  setSelectedPair(pair.name.split('/').join('').toLowerCase());
+
+                  setDataArray((prev) => {
+                    return [null];
+                  });
+                }}
                 className='p-2 border cursor-pointer border-gray-400 shadow rounded-md hover:bg-blue-400 hover:text-white s '>
                 {pair.name}
               </button>

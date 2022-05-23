@@ -8,6 +8,7 @@ import AverageTickerValues from './components/AvgTickerValContainer';
 import TradingPairBtnContainer from './components/TradingPairBtnContainer';
 import SelectedBtnContainer from './components/SelectedBtnContainer';
 import FetchStateContainer from './components/FetchStateContainer';
+import { Chart } from './components/Chart';
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -15,8 +16,19 @@ function App() {
   const [avgTradingPairPrice, setAvgTradingPairPrice] = useState(null);
   const [currencyPairButtonListData, setCurrencyPairButtonListData] =
     useState(null);
-
   const [selectedPair, setSelectedPair] = useState(null);
+
+  //- chart- js
+
+  const [ask, setAsk] = useState(null);
+  const [dataArray, setDataArray] = useState([
+    {
+      name: selectedPair ? selectedPair : '',
+      price: ask ? ask : 0,
+    },
+  ]);
+
+  console.log(dataArray);
 
   useEffect(() => {
     const fetchingCurrencyPairs = async () => {
@@ -63,8 +75,6 @@ function App() {
     fetchingCurrencyPairs();
   }, []);
 
-  if (selectedPair) console.log(selectedPair);
-
   return (
     <div className=' flex flex-col h-screen '>
       <Header />
@@ -83,6 +93,7 @@ function App() {
             <TradingPairBtnContainer
               currencyPairButtonListData={currencyPairButtonListData}
               setSelectedPair={setSelectedPair}
+              setDataArray={setDataArray}
             />
             <SelectedBtnContainer
               currencyPairButtonListData={currencyPairButtonListData}
@@ -91,6 +102,13 @@ function App() {
           </>
         )}
       </Layout>
+      <Chart
+        selectedPair={selectedPair}
+        dataArray={dataArray}
+        setDataArray={setDataArray}
+        ask={ask}
+        setAsk={setAsk}
+      />
       <Footer />
     </div>
   );

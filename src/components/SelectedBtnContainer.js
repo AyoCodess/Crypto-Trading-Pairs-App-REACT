@@ -3,6 +3,7 @@ import React from 'react';
 function SelectedBtnContainer({ selectedPair, currencyPairButtonListData }) {
   return (
     <div className='flex flex-col justify-center items-center p-2 border border-blue-400 rounded-md shadow'>
+      {!selectedPair && <p>Select trading pair above</p>}
       {selectedPair &&
         currencyPairButtonListData &&
         currencyPairButtonListData.map((pair) => {
