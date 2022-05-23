@@ -34,16 +34,16 @@ function App() {
       try {
         // - feting the the price of currency pairs.
 
-        const bitfinexCall = await axios(
-          `https://api-pub.bitfinex.com/v2/tickers?symbols=tBTCUSD` //, pos 7 = last price
+        const coinbaseCall = await axios(
+          `https://api.coinbase.com/v2/exchange-rates?currency=BTC`
         );
 
         const bitmapCall = await axios(
           `https://www.bitstamp.net/api/v2/ticker/btcusd`
         );
 
-        const coinbaseCall = await axios(
-          `https://api.coinbase.com/v2/exchange-rates?currency=BTC`
+        const bitfinexCall = await axios(
+          `https://api-pub.bitfinex.com/v2/tickers?symbols=tBTCUSD` //, pos 7 = last price
         );
 
         const coinbase = parseInt(coinbaseCall.data.data.rates.USD);

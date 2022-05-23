@@ -39,13 +39,16 @@ All User story requirements were met.
 
 #### 1) Did you encounter any problems and how did you overcome them?
 
-- There is a CORS issue with the Bitstamp and bitfinex endpoints.
+### CORS
 
-#### Bitstamp
+- This is what a user would encounter in production.
+  ![CorsIsssue](https://i.imgur.com/I4w1OkM.png)
+
+##### Bitstamp
 
 ![bitstampCorsIsssue](https://i.imgur.com/x9vAbum.png)
 
-#### Bitfinex
+##### Bitfinex
 
 ![bitfinexCorsIsssue](https://i.imgur.com/emPynR1.png)
 
