@@ -114,7 +114,7 @@ function App() {
         />
       )}
       {!selectedPair && !isError && (
-        <h3 className='flex justify-center font-medium'>
+        <h3 className='flex justify-center font-medium py-6'>
           Select a trading pair to view chart
         </h3>
       )}
