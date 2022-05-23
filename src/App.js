@@ -12,6 +12,7 @@ import FetchStateContainer from './components/FetchStateContainer';
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [avgTradingPairPrice, setAvgTradingPairPrice] = useState(0);
 
   // - feting the the price of currency pairs.
   useEffect(() => {
@@ -32,9 +33,13 @@ function App() {
 
         setIsLoading(false);
 
-        const coinbase = coinbaseCall.data.data.rates.USD;
-        const bitmap = bitmapCall.data.open;
-        const bitfinex = bitfinexCall.data[0][7];
+        const coinbase = parseInt(coinbaseCall.data.data.rates.USD);
+        const bitmap = parseInt(bitmapCall.data.open);
+        const bitfinex = parseInt(bitfinexCall.data[0][7]);
+
+        setAvgTradingPairPrice(
+          ((coinbase + bitmap + bitfinex) / 3).toLocaleString()
+        );
       } catch (err) {
         console.error(err);
         setIsLoading(false);
@@ -61,7 +66,7 @@ function App() {
           <>
             <TradingPairBtnContainer />
             <SelectedBtnContainer />
-            <AverageTickerValues />
+            <AverageTickerValues avgTradingPairPrice={avgTradingPairPrice} />
           </>
         )}
       </Layout>

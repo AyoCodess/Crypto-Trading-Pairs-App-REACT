@@ -1,9 +1,17 @@
 import React from 'react';
 
-function AverageTickerValues() {
+function AverageTickerValues({ avgTradingPairPrice }) {
   return (
-    <div className=' flex justify-center p-2 border border-blue-300 rounded-md shadow'>
-      AverageTickerValues
+    <div className=' flex flex-col justify-center p-2 border border-blue-300 rounded-md shadow'>
+      <h2 className='mt-2 text-center'>
+        The Average price of ??? from Coinbase, Bitmap & Bitfinex in USD
+      </h2>
+      <hr className='w-2/4 my-4 border border-gray-200 mx-auto' />
+      <div className=' flex justify-center mb-2'>
+        <h3 className='text-xl font-medium text-green-600 border border-gray-200 shadow rounded-md p-2'>
+          ${avgTradingPairPrice}
+        </h3>
+      </div>
     </div>
   );
 }
