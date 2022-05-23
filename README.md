@@ -45,7 +45,7 @@ All User story requirements were met.
 
 ![bitstampCorsIsssue](https://i.imgur.com/x9vAbum.png)
 
-#### Fitfinex
+#### Bitfinex
 
 ![bitfinexCorsIsssue](https://i.imgur.com/emPynR1.png)
 
