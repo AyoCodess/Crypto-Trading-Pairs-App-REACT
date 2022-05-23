@@ -68,4 +68,4 @@ Download, install and turn off CORS via the Moesif CORS chrome extension to test
 
 ### Live-link
 
-crypto-trading-pairs-app.netlify.app
+https://crypto-trading-pairs-app.netlify.app
