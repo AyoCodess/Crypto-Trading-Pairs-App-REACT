@@ -2,7 +2,7 @@ import React from 'react';
 
 function AverageTickerValues({ avgTradingPairPrice }) {
   return (
-    <div className=' flex flex-col justify-center p-2 border border-blue-300 rounded-md shadow'>
+    <div className=' flex flex-col justify-center p-2 border border-blue-300 rounded-md shadow md:row-start-1 md:row-span-2'>
       <h2 className='mt-2 text-center'>
         The most current average price of{' '}
         <span className='font-extrabold text-yellow-500'>Bitcoin </span>from

@@ -7,8 +7,6 @@ function SelectedBtnContainer({ selectedPair, currencyPairButtonListData }) {
         currencyPairButtonListData &&
         currencyPairButtonListData.map((pair) => {
           if (pair.url_symbol === selectedPair) {
-            console.log('it exists');
-            console.log(pair);
             return (
               <div key={pair.name} className=' flex flex-col gap-2 text-center'>
                 <p className='text-lg text-blue-500 font-extrabold'>

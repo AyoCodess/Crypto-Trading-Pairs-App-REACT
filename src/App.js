@@ -79,6 +79,7 @@ function App() {
         )}
         {!isLoading && !isError && (
           <>
+            <AverageTickerValues avgTradingPairPrice={avgTradingPairPrice} />
             <TradingPairBtnContainer
               currencyPairButtonListData={currencyPairButtonListData}
               setSelectedPair={setSelectedPair}
@@ -87,7 +88,6 @@ function App() {
               currencyPairButtonListData={currencyPairButtonListData}
               selectedPair={selectedPair}
             />
-            <AverageTickerValues avgTradingPairPrice={avgTradingPairPrice} />
           </>
         )}
       </Layout>
