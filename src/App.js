@@ -8,7 +8,7 @@ import SelectedBtnContainer from './components/SelectedBtnContainer';
 
 function App() {
   return (
-    <div className=''>
+    <div className=' flex flex-col h-screen '>
       <Header />
       <Layout>
         <TradingPairBtnContainer />
