@@ -35,15 +35,15 @@ function App() {
         // - feting the the price of currency pairs.
 
         const coinbaseCall = await axios(
-          `https://api.coinbase.com/v2/exchange-rates?currency=BTC`
+          `https://mycorsproxyayocodes.herokuapp.com/https://api.coinbase.com/v2/exchange-rates?currency=BTC`
         );
 
         const bitmapCall = await axios(
-          `https://www.bitstamp.net/api/v2/ticker/btcusd`
+          `https://mycorsproxyayocodes.herokuapp.com/https://www.bitstamp.net/api/v2/ticker/btcusd`
         );
 
         const bitfinexCall = await axios(
-          `https://api-pub.bitfinex.com/v2/tickers?symbols=tBTCUSD` //, pos 7 = last price
+          `https://mycorsproxyayocodes.herokuapp.com/https://api-pub.bitfinex.com/v2/tickers?symbols=tBTCUSD` //, pos 7 = last price
         );
 
         const coinbase = parseInt(coinbaseCall.data.data.rates.USD);
@@ -57,7 +57,7 @@ function App() {
         //-  getting currency pairs for button list
 
         const currencyPairButtonList = await axios(
-          `https://www.bitstamp.net/api/v2/trading-pairs-info/`
+          `https://mycorsproxyayocodes.herokuapp.com/https://www.bitstamp.net/api/v2/trading-pairs-info/`
         );
 
         setCurrencyPairButtonListData(currencyPairButtonList.data);

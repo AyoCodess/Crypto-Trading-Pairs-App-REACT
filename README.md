@@ -10,9 +10,13 @@ npm install
 npm start
 ```
 
-#### Note:
+### Update CORS FIX
 
-Download, install and turn off CORS via the Moesif CORS chrome extension to test the live link.
+I created my own CORS proxy sever using heroku
+
+~~#### Note:
+
+Download, install and turn off CORS via the Moesif CORS chrome extension to test the live link.~~
 
 ### About & User Story
 
@@ -39,20 +43,12 @@ All User story requirements were met.
 
 #### 1) Did you encounter any problems and how did you overcome them?
 
-### CORS
+~~### CORS~~
 
-- This is what a user would encounter in production.
-  ![CorsIsssue](https://i.imgur.com/I4w1OkM.png)
+~~ - This is what a user would encounter in production.~~
+![CorsIsssue](https://i.imgur.com/I4w1OkM.png)
 
-##### Bitstamp
-
-![bitstampCorsIsssue](https://i.imgur.com/x9vAbum.png)
-
-##### Bitfinex
-
-![bitfinexCorsIsssue](https://i.imgur.com/emPynR1.png)
-
-- As I understand it, theres nothing we can do on the front-end when it comes to the production version. We either have to build or use a proxy, or fix the API at the backend. I used the Moesif CORS chrome extension circumvent this issue locally due to time constraints. If I had more time I would of looked for alternative API's to use or build my own proxy server. If there a solution I am mussing please let me know.
+- ~~As I understand it, theres nothing we can do on the front-end when it comes to the production version. We either have to build or use a proxy, or fix the API at the backend. I used the Moesif CORS chrome extension circumvent this issue locally due to time constraints. If I had more time I would of looked for alternative API's to use or build my own proxy server. If there a solution I am mussing please let me know.~~
 
 - I did not entirely understand the language used when describing ‘GJNumbersView and GJNumberLabel components’, so I went ahead and implemented the UI and functionality in the most appropriate way I could think of. If there was more time and under different circumstances, I would have emailed you for more clarification.
 
@@ -61,10 +57,6 @@ All User story requirements were met.
   reCharts.js and managed to fulfil the requirements with it. Under different circumstances, I would have asked for help and carried on debugging the issue.
 
 ---
-
-#### Note:
-
-Download, install and turn off CORS via the Moesif CORS chrome extension to test the live link.
 
 ### Live-link
 

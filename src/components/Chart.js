@@ -24,7 +24,7 @@ export function Chart({
     try {
       if (selectedPair) {
         const d = await axios(
-          `https://www.bitstamp.net/api/v2/ticker/${selectedPair}`
+          `https://mycorsproxyayocodes.herokuapp.com/https://www.bitstamp.net/api/v2/ticker/${selectedPair}`
         );
 
         let ask = d.data.ask;
@@ -49,7 +49,7 @@ export function Chart({
     fetchChartData();
   }, [selectedPair]);
 
-  const url = `https://www.bitstamp.net/api/v2/ticker/${selectedPair}`;
+  const url = `https://mycorsproxyayocodes.herokuapp.com/https://www.bitstamp.net/api/v2/ticker/${selectedPair}`;
   const TIME_TO_WAIT = 10500;
 
   useEffect(() => {
