@@ -14,9 +14,9 @@ npm start
 
 I created my own CORS proxy sever using heroku
 
-~~#### Note:
+#### ~~Note:~~
 
-Download, install and turn off CORS via the Moesif CORS chrome extension to test the live link.~~
+~~Download, install and turn off CORS via the Moesif CORS chrome extension to test the live link.~~
 
 ### About & User Story
 
@@ -43,9 +43,9 @@ All User story requirements were met.
 
 #### 1) Did you encounter any problems and how did you overcome them?
 
-~~### CORS~~
+### ~~CORS~~
 
-~~ - This is what a user would encounter in production.~~
+~~This is what a user would encounter in production.~~
 ![CorsIsssue](https://i.imgur.com/I4w1OkM.png)
 
 - ~~As I understand it, theres nothing we can do on the front-end when it comes to the production version. We either have to build or use a proxy, or fix the API at the backend. I used the Moesif CORS chrome extension circumvent this issue locally due to time constraints. If I had more time I would of looked for alternative API's to use or build my own proxy server. If there a solution I am mussing please let me know.~~
