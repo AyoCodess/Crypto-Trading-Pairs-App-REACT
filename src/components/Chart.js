@@ -75,7 +75,7 @@ export function Chart({
   }, [dataArray, selectedPair, setDataArray, setIsError, url]);
 
   return (
-    <div className='mt-4  mb-6 mx-auto'>
+    <div className=' mt-4 mb-6 mx-auto pl-2 sm:pl-0 '>
       {selectedPair && (
         <BasicTextContainer
           text={`Current Price of ${selectedPair.toUpperCase()} Every 10secs`}

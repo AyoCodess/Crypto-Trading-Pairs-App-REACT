@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Layout({ children }) {
+function MainLayout({ children }) {
   return (
     <div className='px-2 grid gap-2 md:grid-cols-2 mt-3 mb-auto md:my-auto '>
       {children}
@@ -8,4 +8,4 @@ function Layout({ children }) {
   );
 }
 
-export default Layout;
+export default MainLayout;

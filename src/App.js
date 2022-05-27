@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import Layout from './components/Layout';
+import MainLayout from './components/MainLayout';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AverageTickerValues from './components/AvgTickerValContainer';
@@ -76,7 +76,7 @@ function App() {
   return (
     <div className=' flex flex-col h-screen max-w-4xl mx-auto'>
       <Header />
-      <Layout>
+      <MainLayout>
         {isLoading && (
           <FetchStateContainer text={'Currency pairs are loading...'} />
         )}
@@ -101,7 +101,7 @@ function App() {
             />
           </>
         )}
-      </Layout>
+      </MainLayout>
       {selectedPair && (
         <Chart
           selectedPair={selectedPair}
