@@ -34,6 +34,7 @@ export function Chart({
           {
             name: selectedPair,
             price: ask,
+            timestamp: new Date().toISOString(),
           },
           ...prev,
         ]);
@@ -60,6 +61,7 @@ export function Chart({
             {
               name: selectedPair,
               price: res.data.ask.toLocaleString(),
+              timestamp: new Date().toISOString(),
             },
             ...prev,
           ]);

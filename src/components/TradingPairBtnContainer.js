@@ -21,7 +21,7 @@ function TradingPairBtnContainer({
                 onClick={() => {
                   setSelectedPair(pair.name.split('/').join('').toLowerCase());
 
-                  setDataArray((prev) => {
+                  setDataArray(() => {
                     return [null];
                   });
                 }}

@@ -25,6 +25,7 @@ function App() {
     {
       name: selectedPair ? selectedPair : '',
       price: ask ? ask : 0,
+      timestamp: '',
     },
   ]);
 
@@ -50,9 +51,15 @@ function App() {
         const bitmap = parseInt(bitmapCall.data.open);
         const bitfinex = parseInt(bitfinexCall.data[0][7]);
 
-        setAvgTradingPairPrice(
-          ((coinbase + bitmap + bitfinex) / 3).toLocaleString()
-        );
+        if (isNaN(coinbase) || isNaN(bitmap) || isNaN(bitfinex)) {
+          setIsError(
+            'Error, Api response has changed. Please contact the developer'
+          );
+        } else {
+          setAvgTradingPairPrice(
+            ((coinbase + bitmap + bitfinex) / 3).toLocaleString()
+          );
+        }
 
         //-  getting currency pairs for button list
 
